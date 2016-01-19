@@ -1,4 +1,4 @@
-# javascript-french
+# javascript-en-francais
 
 Il est temps de coder en français !
 
