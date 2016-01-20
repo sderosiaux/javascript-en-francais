@@ -3,7 +3,7 @@
 // case
 // break
 // default
-// do 
+// do
 // continue
 // try catch finally
 // in
@@ -22,7 +22,7 @@ macro si {
     rule { $x:expr alors $y:expr fin si } => { if ($x) { $y } }
 }
 macro sinon { rule { } => { else } }
-macro pendant {
+macro tant {
     rule { que ($x:expr) } => { while($x) }
     rule { que $x:expr } => { while($x) }
 }
