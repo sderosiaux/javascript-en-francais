@@ -5,14 +5,21 @@ Il est temps de coder en français !
 TEC. (WIP)
 
 Ce projet utilise `sweet.js` pour faire la conversion à la volée vers le langage Javascript classique.
-Seul des mots clefs franco-français sont rajoutés.
+Seul des mots-clefs franco-français sont rajoutés.
 
 Deux modes :
 
 - un mode où seul les mots-clefs sont simplement remplacés par leur équivalent
 - un mode où on parle pseudo-algorithme, en cours (vous savez, celui qu'on apprend dans les écoles ?)
 
-[Sweet js playground](http://goo.gl/XeWJcX) (press `Compile`)
+## A FAIRE
+
+- mise en place d'un convertisseur (par exemple un chargeur webpack).
+- ajouter une syntaxe pseudo-algorithme complète
+
+## Exemple et terrain de jeu
+
+[Sweet js playground](http://goo.gl/XeWJcX) (appuyer sur `Compile`)
 
 Quasiment tous les mots-clefs sont traduits, il est possible de taper ce genre de programme :
 
