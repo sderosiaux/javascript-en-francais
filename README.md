@@ -2,6 +2,8 @@
 
 Il est temps de coder en français !
 
+![Coucou c'est nous](https://rawgit.com/chtefi/javascript-en-francais/master/coucou%20c'est%20nous.png)
+
 TEC. (WIP)
 
 Ce projet utilise `sweet.js` pour faire la conversion à la volée vers le langage Javascript classique.
