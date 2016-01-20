@@ -2,46 +2,107 @@
 
 Il est temps de coder en français !
 
-WIP.
+TEC. (WIP)
 
-Utilise `sweet.js` pour faire la conversion à la volée en respectant le language javascript.
-Seul des mots clefs français sont rajoutés.
+Ce projet utilise `sweet.js` pour faire la conversion à la volée vers le langage Javascript classique.
+Seul des mots clefs franco-français sont rajoutés.
 
 Deux modes :
 
-- un mode où seul les mots-clefs sont remplacés par leur équivalent
-- un mode où on parle pseudo-algorithme (vous savez, celui qu'on apprend dans les écoles ?)
+- un mode où seul les mots-clefs sont simplement remplacés par leur équivalent
+- un mode où on parle pseudo-algorithme, en cours (vous savez, celui qu'on apprend dans les écoles ?)
 
-[Sweet js playground](http://goo.gl/ILIQRK)
+[Sweet js playground](http://goo.gl/XeWJcX) (press `Compile`)
 
-Pour l'instant :
+Quasiment tous les mots-clefs sont traduits, il est possible de taper ce genre de programme :
 
 ```js
 
-pour (i = 0; i < 10; i++) { console.log(i); }
+déclarer i = 13;
+
+// try catch finally
+essayer {
+    déclarer i = 1/0;
+} si ça plante (e) {
+    console.log('boom')
+} pour finir {
+    i = 0;
+}
+
+// switch case default
+en fonction de (i) {
+    cas 1: arrêter;
+    cas 2: arrêter;
+    defaut: retourner 5;
+}
+
+// in
+si ('document' est dans window) { i = 1; }
+
+// ===
+si (i vaut 3) { i = 0; }
+
+// for
+pour (i = 0; i < 10; i++) {
+    console.log(i);
+    si (i > 5) continuer
+    sinon arrêter
+}
 pour i de 0 à 10 { console.log(i != faux); }
 
+// while
 tant que (i > 0) { i--; }
 tant que i > 0 { i--; }
 
+// if else
 si (i > 10 == vrai) { i = 0 }
 si i > 10 alors i = 0 fin si
 
 si (type i == 'number') { i = 0; }
 si type i == 'number' alors i = 0 fin si
 
-console.log( 'toto' == vide || 'toto' == indéfini)
+// === null / === undefined
+console.log(i est vide || i est indéfini)
 
+// function, return, this
 fonction fn(arg1) {
     retourner courant + arg2;
 }
 ```
 
-Se traduit en :
+Se traduit bien en Javascript classique :
 
 ```js
+var i = 13;
+try {
+    var // try catch finally
+    i = 1 / 0;
+} catch (e) {
+    console.log('boom');
+} finally {
+    i = 0;
+}
+switch (// switch case default
+    i) {
+case 1:
+    break;
+case 2:
+    break;
+default:
+    return 5;
+}
+if ('document' in window) {
+    i = 1;
+}
+if (i === 3) {
+    i = 0;
+}
 for (i = 0; i < 10; i++) {
     console.log(i);
+    if (i > 5)
+        continue;
+    else
+        break;
 }
 for (var i = 0; i < 0; i++) {
     console.log(i != false);
@@ -64,8 +125,8 @@ if (typeof i == 'number') {
 if (typeof i == 'number') {
     i = 0;
 }
-console.log('toto' == null || 'toto' == undefined);
+console.log(i === null || i === undefined);
 function fn(arg1) {
-    return courant + arg2;
+    return this + arg2;
 }
 ```

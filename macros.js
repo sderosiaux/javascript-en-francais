@@ -1,25 +1,19 @@
 // TODO
-// switch
-// case
-// break
-// default
 // do
-// continue
-// try catch finally
-// in
 // new
 // instanceof
 // delete
 // with, void
-// var
 
 macro pour {
     rule { ($x:expr;$y:expr;$z:expr) } => { for($x;$y;$z) }
     rule { $x:ident de $y:expr à $z:expr } => { for(var $x = $y; $x < $y; $x++) }
+    rule { finir } => { finally }
 }
 macro si {
     rule { ($x:expr) } => { if($x) }
     rule { $x:expr alors $y:expr fin si } => { if ($x) { $y } }
+    rule { ça plante } => { catch }
 }
 macro sinon { rule { } => { else } }
 macro tant {
@@ -37,8 +31,25 @@ macro retourner {
     rule { } => { return }
 }
 
-macro this { rule { } => { courant } }
+macro en { rule { fonction de } => { switch } }
+macro cas { rule { } => { case } }
+macro arrêter { rule { } => { break } }
+macro defaut { rule { } => { default } }
+macro continuer { rule { } => { continue } }
+
+macro déclarer { rule { } => { var } }
+macro courant { rule { } => { this } }
 macro vrai { rule { } => { true } }
 macro faux { rule { } => { false } }
 macro vide { rule { } => { null } }
 macro indéfini { rule { } => { undefined } }
+macro est {
+    rule { dans } => { in }
+    rule { vide } => { === null }
+    rule { indéfini } => { === undefined }
+}
+macro vaut {
+    rule { } => { === }  
+}
+
+macro essayer { rule { } => { try } }
