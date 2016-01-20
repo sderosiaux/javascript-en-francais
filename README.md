@@ -21,8 +21,8 @@ Pour l'instant :
 pour (i = 0; i < 10; i++) { console.log(i); }
 pour i de 0 à 10 { console.log(i != faux); }
 
-pendant que (i > 0) { i--; }
-pendant que i > 0 { i--; }
+tant que (i > 0) { i--; }
+tant que i > 0 { i--; }
 
 si (i > 10 == vrai) { i = 0 }
 si i > 10 alors i = 0 fin si
