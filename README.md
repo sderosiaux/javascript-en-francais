@@ -16,8 +16,7 @@ Deux modes :
 
 ## A FAIRE
 
-- ajouter les quelques keywords manquant
-- ajouter une syntaxe pseudo-algorithme complète
+- compléter la syntaxe pseudo-algorithme
 
 ## Chargeur webpack
 
@@ -31,13 +30,19 @@ loaders: [{
 
 ## Exemple et terrain de jeu
 
-[Sweet js playground](http://goo.gl/XeWJcX) (appuyer sur `Compile`)
+[Sweet js playground](http://goo.gl/2d6R3G) (appuyer sur `Compile`)
 
 Quasiment tous les mots-clefs sont traduits, il est possible de taper ce genre de programme :
 
 ```js
-
+// var
 déclarer i = 13;
+
+// new
+déclarer d = nouvelle Date();
+déclarer d2 = nouveau Int8Array();
+// delete
+supprimer d2;
 
 // try catch finally
 essayer {
@@ -55,11 +60,14 @@ en fonction de (i) {
     defaut: retourner 5;
 }
 
-// in
-si ('document' est dans window) { i = 1; }
+// do while
+démarrer {
+    i--;
+} tant que (i > 10);
 
-// ===
-si (i vaut 3) { i = 0; }
+// while
+tant que (i > 0) { i--; }
+tant que i > 0 { i--; }
 
 // for
 pour (i = 0; i < 10; i++) {
@@ -69,40 +77,45 @@ pour (i = 0; i < 10; i++) {
 }
 pour i de 0 à 10 { console.log(i != faux); }
 
-// while
-tant que (i > 0) { i--; }
-tant que i > 0 { i--; }
+// in
+si ('document' est dans window) { i = 1; }
 
-// if else
+// instanceof
+si (i est une instance de Date) { i = null }
+
+// if
+si (i vaut 3) { i = 0; }
 si (i > 10 == vrai) { i = 0 }
 si i > 10 alors i = 0 fin si
 
 si (type i == 'number') { i = 0; }
 si type i == 'number' alors i = 0 fin si
 
-// === null / === undefined
 console.log(i est vide || i est indéfini)
 
-// function, return, this
+// function return this
 fonction fn(arg1) {
     retourner courant + arg2;
 }
+
 ```
 
 Se traduit bien en Javascript classique :
 
 ```js
 var i = 13;
+var d = new Date();
+var d2 = new Int8Array();
+delete d2;
+
 try {
-    var // try catch finally
-    i = 1 / 0;
+    var i = 1 / 0;
 } catch (e) {
     console.log('boom');
 } finally {
     i = 0;
 }
-switch (// switch case default
-    i) {
+switch (i) {
 case 1:
     break;
 case 2:
@@ -110,12 +123,18 @@ case 2:
 default:
     return 5;
 }
-if ('document' in window) {
-    i = 1;
+
+do {
+    i--;
+} while (i > 10);
+
+while (i > 0) {
+    i--;
 }
-if (i === 3) {
-    i = 0;
+while (i > 0) {
+    i--;
 }
+
 for (i = 0; i < 10; i++) {
     console.log(i);
     if (i > 5)
@@ -126,11 +145,15 @@ for (i = 0; i < 10; i++) {
 for (var i = 0; i < 0; i++) {
     console.log(i != false);
 }
-while (i > 0) {
-    i--;
+
+if ('document' in window) {
+    i = 1;
 }
-while (i > 0) {
-    i--;
+if (i instanceof Date) {
+    i = null;
+}
+if (i === 3) {
+    i = 0;
 }
 if (i > 10 == true) {
     i = 0;

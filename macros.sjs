@@ -1,9 +1,4 @@
-// TODO
-// do
-// new
-// instanceof
-// delete
-// with, void
+// Reste with, void
 
 macro pour {
     rule { ($x:expr;$y:expr;$z:expr) } => { for($x;$y;$z) }
@@ -37,6 +32,12 @@ macro arrêter { rule { } => { break } }
 macro defaut { rule { } => { default } }
 macro continuer { rule { } => { continue } }
 
+macro nouvelle { rule { } => { new } }
+macro nouvel { rule { } => { new } }
+macro nouveau { rule { } => { new } }
+macro supprimer { rule { } => { delete } }
+
+macro démarrer { rule { } => { do } }
 macro déclarer { rule { } => { var } }
 macro courant { rule { } => { this } }
 macro vrai { rule { } => { true } }
@@ -47,6 +48,9 @@ macro est {
     rule { dans } => { in }
     rule { vide } => { === null }
     rule { indéfini } => { === undefined }
+    rule { vrai } => { === true }
+    rule { faux } => { === false }
+    rule { une instance de } => { instanceof }
 }
 macro vaut {
     rule { } => { === }  
