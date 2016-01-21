@@ -2,11 +2,11 @@
 
 Il est temps de coder en français !
 
-![Coucou c'est nous](https://rawgit.com/chtefi/javascript-en-francais/master/coucou%20c'est%20nous.png)
+![La France](https://rawgit.com/chtefi/javascript-en-francais/master/France.png)
 
 TEC. (WIP)
 
-Ce projet utilise `sweet.js` pour faire la conversion à la volée vers le langage Javascript classique.
+Ce projet utilise `sweet.js` pour faire la conversion à la volée vers le langage Javascript.
 Seul des mots-clefs franco-français sont rajoutés.
 
 Deux modes :
@@ -16,8 +16,18 @@ Deux modes :
 
 ## A FAIRE
 
-- mise en place d'un convertisseur (par exemple un chargeur webpack).
+- ajouter les quelques keywords manquant
 - ajouter une syntaxe pseudo-algorithme complète
+
+## Chargeur webpack
+
+Il est possible de coder en français et de convertir à la volée en Javascript avec un chargeur webpack : [sweetjs-loader](https://github.com/jlongster/sweetjs-loader).
+
+```js
+loaders: [{
+  test: /\.js$/, loader: 'sweetjs?modules[]=./macros.sjs,readers[]=reader-mod'
+}]
+```
 
 ## Exemple et terrain de jeu
 
