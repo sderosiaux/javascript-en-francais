@@ -17,6 +17,7 @@ Deux modes :
 ## A FAIRE
 
 - compléter la syntaxe pseudo-algorithme
+- ajouter un convertisseur Javascript vers javascript-en-français
 
 ## Chargeur webpack
 
